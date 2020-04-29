@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fmRESTor.js DEMO</title>
+    <link rel="stylesheet" href="assets/css/highlight/styles/default.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<script src="../lib/fmRESTorJS.js"></script>
+<script src="assets/js/highlight.pack.js"></script>
+<header>
+    <div class="logo"><img src="assets/img/fmrestor_green_icon.svg" alt="Logo"></div>
+    <h1>fmRESTor.js</h1>
+</header>
+<p>This simple web page demonstrates how you can use fmRESTor to interact with a FileMaker database via FileMaker Data API directly from an asynchronous JavaScript code. To test how fmRESTor works,
+    simply host our demo database on your FileMaker Server, enter the access credentials below, and start testing the code samples. Please note that JavaScript's advantage is that it can be executed
+    inside a web browser without having to host any intermediate code on a web server, but the disadvantage is that the whole code, including any secrets, are exposed to the user. If you are looking
+    for a
+    more secure environment, check out our PHP version of fmRESTor.
+</p>
+<h2>Access to your server</h2>
+<p>Please fill up your access credentials to your FileMaker database where is hosted fmRESTor demo database</p>
+<table class="credentials">
+    <tr>
+        <th><label for="host">YOUR_HOST</label></th>
+        <td><input type="text" id="host" value="" placeholder="Enter server hostname"></td>
+    </tr>
+    <tr>
+        <th><label for="database">YOUR_DATABASE_NAME</label></th>
+        <td><input type="text" id="database" value="fmRESTor"></td>
+    </tr>
+    <tr>
+        <th><label for="layout">YOUR_DATABASE_LAYOUT</label>
+        <td><input type="text" id="layout" value="php_user"></td>
+    </tr>
+    <tr>
+        <th><label for="user">YOUR_DATABASE_USER</label>
+        <td><input type="text" id="user" value="api"></td>
+    </tr>
+    <tr>
+        <th><label for="password">YOUR_DATABASE_PASSWORD</label>
+        <td><input type="password" id="password" value="api123456"></td>
+    </tr>
+</table>
+
+<h2>Examples</h2>
+
+<!-- ========================================= getProductInformation ========================================= -->
+<div id="getProductInformation" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getProductInformation()
+        </div>
+        <button onclick="getProductInformation(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+                        <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getProductInformation((requestSuccess) => {
+        // call method "getProductInformation" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getProductInformation" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= getDatabaseNames ========================================= -->
+<div id="getDatabaseNames" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getDatabaseNames()
+        </div>
+        <button onclick="getDatabaseNames(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getDatabaseNames((requestSuccess) => {
+        // call method "getDatabaseNames" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getDatabaseNames" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= getScriptNames ========================================= -->
+<div id="getScriptNames" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getScriptNames()
+        </div>
+        <button onclick="getScriptNames(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getScriptNames((requestSuccess) => {
+        // call method "getScriptNames" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getScriptNames" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= getLayoutNames ========================================= -->
+<div id="getLayoutNames" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getLayoutNames()
+        </div>
+        <button onclick="getLayoutNames(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getLayoutNames((requestSuccess) => {
+        // call method "getLayoutNames" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getLayoutNames" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= getLayoutMetadata ========================================= -->
+<div id="getLayoutMetadata" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getLayoutMetadata()
+        </div>
+        <button onclick="getLayoutMetadata(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getLayoutMetadata((requestSuccess) => {
+        // call method "getLayoutMetadata" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getLayoutMetadata" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= createRecord ========================================= -->
+<div id="createRecord" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            createRecord(parameters)
+        </div>
+        <button onclick="createRecord(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let parameters = {
+  "fieldData": {
+    "surname": "Create surname",
+    "email": "email@email.com",
+    "birthday": "1.1.2001",
+    "personal_identification_number": "99",
+    "address": "Street 24, City"
+  }
+}
+
+let fm = new fmRESTorJS(YOUR_HOST,
+    YOUR_DATABASE_NAME,
+    YOUR_DATABASE_LAYOUT,
+    YOUR_DATABASE_USER,
+    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.createRecord(parameters, (requestSuccess) => {
+        // call method "createRecord" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "createRecord" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= deleteRecord ========================================= -->
+<div id="deleteRecord" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            deleteRecord(recordId, parameters = null)
+        </div>
+        <div class="inputs">
+            <input id="deleteRecordId" type="number" placeholder="recordId">
+        </div>
+        <button onclick="deleteRecord(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+<pre><code class="javascript">// Example parameters
+let id = recordId; // Replace "recordId" for number - Record ID
+let parameters = {
+  "script": "Log request",
+  "script.param": "MyScriptParameters",
+  "script.prerequest": "Log request",
+  "script.prerequest.param": "MyScriptPreRequestParameters",
+  "script.presort": "Log request",
+  "script.presort.param": "MyScriptPreSortParameters"
+}; // Optional
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.deleteRecord(id, parameters, (requestSuccess) => {
+        // call method "deleteRecord" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "deleteRecord" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= duplicateRecord ========================================= -->
+<div id="duplicateRecord" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            duplicateRecord(recordId, parameters = null)
+        </div>
+        <div class="inputs">
+            <input id="duplicateRecordId" type="number" placeholder="recordId"><br/><br/>
+        </div>
+        <button onclick="duplicateRecord(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let id = recordId; // Replace "recordId" for number - Record ID
+let parameters = {
+  "script": "Log request",
+  "script.param": "MyScriptParameters",
+  "script.prerequest": "Log request",
+  "script.prerequest.param": "MyScriptPreRequestParameters",
+  "script.presort": "Log request",
+  "script.presort.param": "MyScriptPreSortParameters"
+}; // Optional
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.duplicateRecord(id, parameters, (requestSuccess) => {
+        // call method "duplicateRecord" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "duplicateRecord" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= editRecord ========================================= -->
+<div id="editRecord" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            editRecord(recordId, parameters)
+        </div>
+        <div class="inputs">
+            <input id="editRecordId" type="number" placeholder="recordId"><br/><br/>
+        </div>
+        <button onclick="editRecord(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let id = recordId; // Replace "recordId" for number - Record ID
+let parameters = {
+  "fieldData": {
+    "surname": "name was Surname",
+    "email": "emailwasedited@email.com",
+    "personal_identification_number": "1"
+  }
+}
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.editRecord(id, parameters, (requestSuccess) => {
+        // call method "editRecord" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "editRecord" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= getRecord ========================================= -->
+<div id="getRecord" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getRecord(recordId, parameters = null)
+        </div>
+        <div class="inputs">
+            <input id="getRecordId" type="number" placeholder="recordId"><br/><br/>
+        </div>
+        <button onclick="getRecord(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let id = recordId; // Replace "recordId" for number - Record ID
+let parameters = {
+  "script": "Log request",
+  "script.param": "MyScriptParameters",
+  "script.prerequest": "Log request",
+  "script.prerequest.param": "MyScriptPreRequestParameters",
+  "script.presort": "Log request",
+  "script.presort.param": "MyScriptPreSortParameters",
+  "layout.response": "php_user",
+  "_limit.USER_licence": 5,
+  "_offset.USER_licence": 10
+}; // Optional
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getRecord(id, parameters, (requestSuccess) => {
+        // call method "getRecord" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getRecord" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= getRecords ========================================= -->
+<div id="getRecords" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            getRecords(parameters = null)
+        </div>
+        <button onclick="getRecords(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let parameters = {
+  "_limit": 5
+}; // Optional
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.getRecords(parameters, (requestSuccess) => {
+        // call method "getRecords" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "getRecords" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= findRecords ========================================= -->
+<div id="findRecords" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            findRecords(parameters)
+        </div>
+        <button onclick="findRecords(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let parameters = {
+  "query": [
+    {
+      "email": "==email@email.com",
+      "birthday": "1.1.2001",
+      "personal_identification_number": "99",
+      "address": "Street 24, City",
+      "omit": "true"
+    }
+  ]
+}
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.findRecords(parameters, (requestSuccess) => {
+        // call method "findRecords" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "findRecords" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= setGlobalField ========================================= -->
+<div id="setGlobalField" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            setGlobalField(parameters)
+        </div>
+        <button onclick="setGlobalField(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let parameters = {
+    "globalFields": {
+        "USER::g_one": "Global g_one is set up",
+        "USER::g_text": "Global g_text is set up"
+    }
+}
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.setGlobalField(parameters, (requestSuccess) => {
+        // call method "setGlobalField" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "setGlobalField" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= runScript ========================================= -->
+<div id="runScript" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            runScript(scriptName, parameters = null)
+        </div>
+        <button onclick="runScript(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let scriptName = "Log request"
+let parameters = {
+  "script.param": "MyScriptParameters"
+}
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.runScript(scriptName, parameters, (requestSuccess) => {
+        // call method "runScript" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "runScript" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================================= uploadFileToContainter ========================================= -->
+<div id="uploadFileToContainter" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            uploadFileToContainter(recordId, containerFieldName, containerFieldRepetition, file)
+        </div>
+        <div class="inputs">
+            <input type="file" id="uploadFile">
+            <input id="uploadFileRecordId" type="number" placeholder="recordId">
+        </div>
+        <button onclick="uploadFileToContainter(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">// Example parameters
+let id = recordId; // Replace "recordId" for number - Record ID
+let containerFieldName = "photo" // Field name with container
+let containerFieldRepetition = 1;
+let file = document.getElementById('uploadFile').files[0]; // Replace 'uploadFile' for your ID - Input file
+
+let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.login((loginSuccess) => {
+    fm.uploadFileToContainter(id, containerFieldName, containerFieldRepetition, file, (requestSuccess) => {
+        // call method "uploadFileToContainter" was successfull ( variable "requestSuccess" contains response )
+    }, (requestError) => {
+        // call method "uploadFileToContainter" failed ( variable "requestError" contains reason )
+    });
+}, (loginError) => {
+    // login to database failed ( variable "loginError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================= logout ========================================= -->
+<div id="logout" class="method">
+    <div class="headline">
+        <div class="arrow" onclick="headlineClick(this)">
+            <img src="./assets/img/arrow.png" alt="Arrow">
+        </div>
+        <div class="name">
+            logout()
+        </div>
+        <button onclick="logout(this)">RUN</button>
+    </div>
+    <div class="inputResponseCode">
+        <div class="inputCode">
+            <div class="minorHeadline">
+                Code
+            </div>
+            <div class="inputText">
+            <pre><code class="javascript">let fm = new fmRESTorJS(YOUR_HOST,
+                    YOUR_DATABASE_NAME,
+                    YOUR_DATABASE_LAYOUT,
+                    YOUR_DATABASE_USER,
+                    YOUR_DATABASE_PASSWORD);
+
+fm.logout((requestSuccess) => {
+    // call method "logout" was successfull ( variable "requestSuccess" contains response )
+}, (requestError) => {
+    // call method "logout" failed ( variable "requestError" contains reason )
+});
+</code></pre>
+            </div>
+        </div>
+        <div class="responseCode">
+            <div class="minorHeadline">
+                Response
+            </div>
+            <div class="responseText">
+                <pre><code></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    Copyright © 2018-2020 24U Software
+</footer>
+<script>
+
+    function logout(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+
+        fm.login((loginSuccess) => {
+            fm.logout((requestSuccess) => {
+                // logout - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // logout - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        });
+    }
+
+    function uploadFileToContainter(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        let id = document.getElementById('uploadFileRecordId').value;
+        let file = document.getElementById('uploadFile').files[0];
+
+
+        fm.login((loginSuccess) => {
+            fm.uploadFileToContainter(id, containerFieldName = "photo", containerFieldRepetition = 1, file
+                , (requestSuccess) => {
+                    // uploadFileToContainter - SUCCESS
+                    writeOutputToResponse(responseField, requestSuccess);
+                }, (requestError) => {
+                    // uploadFileToContainter - ERROR
+                    writeOutputToResponse(responseField, requestError);
+                });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function runScript(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.runScript(scriptName = "Log request", parameters = {
+                "script.param": "MyScriptParameters"
+            }, (requestSuccess) => {
+                // runScript - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // runScript - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function setGlobalField(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.setGlobalField(parameters = {
+                "globalFields": {
+                    "USER::g_one": "Global g_one is set up",
+                    "USER::g_text": "Global g_text is set up"
+                }
+            }, (requestSuccess) => {
+                // setGlobalField - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // setGlobalField - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function findRecords(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.findRecords(parameters = {
+                "query": [
+                    {
+                        "email": "email@email.com",
+                        "birthday": "1.1.2001",
+                        "personal_identification_number": "99",
+                        "address": "Street 24, City",
+                        "omit": "true"
+                    }
+                ]
+            }, (requestSuccess) => {
+                // findRecords - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // findRecords - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getRecords(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.getRecords(parameters = {
+                "_limit": 5
+            }, (requestSuccess) => {
+                // getRecords - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getRecords - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getRecord(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        let id = document.getElementById('getRecordId').value;
+
+        fm.login((loginSuccess) => {
+            fm.getRecord(id, parameters = {
+                "script": "Log request",
+                "script.param": "MyScriptParameters",
+                "script.prerequest": "Log request",
+                "script.prerequest.param": "MyScriptPreRequestParameters",
+                "script.presort": "Log request",
+                "script.presort.param": "MyScriptPreSortParameters",
+                "layout.response": "php_user",
+                "_limit.USER_licence": 5,
+                "_offset.USER_licence": 10
+            }, (requestSuccess) => {
+                // getRecord - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getRecord - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function editRecord(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        let id = document.getElementById('editRecordId').value;
+
+        fm.login((loginSuccess) => {
+            fm.editRecord(id, parameters = {
+                "fieldData": {
+                    "surname": "surname was edited",
+                    "email": "emailwasedited@email.com",
+                    "personal_identification_number": "1"
+                }
+            }, (requestSuccess) => {
+                // editRecord - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // editRecord - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function duplicateRecord(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        let id = document.getElementById('duplicateRecordId').value;
+
+        fm.login((loginSuccess) => {
+            fm.duplicateRecord(id, parameters = {
+                "script": "Log request",
+                "script.param": "MyScriptParameters",
+                "script.prerequest": "Log request",
+                "script.prerequest.param": "MyScriptPreRequestParameters",
+                "script.presort": "Log request",
+                "script.presort.param": "MyScriptPreSortParameters"
+            }, (requestSuccess) => {
+                // duplicateRecord - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // duplicateRecord - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function deleteRecord(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        let id = document.getElementById('deleteRecordId').value;
+
+        fm.login((loginSuccess) => {
+            fm.deleteRecord(id, parameters = {
+                "script": "Log request",
+                "script.param": "MyScriptParameters",
+                "script.prerequest": "Log request",
+                "script.prerequest.param": "MyScriptPreRequestParameters",
+                "script.presort": "Log request",
+                "script.presort.param": "MyScriptPreSortParameters"
+            }, (requestSuccess) => {
+                // deleteRecord - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // deleteRecord - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function createRecord(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+
+        fm.login((loginSuccess) => {
+            fm.createRecord(parameters = {
+                "fieldData": {
+                    "surname": "Create Surname",
+                    "email": "email@email.com",
+                    "birthday": "1.1.2001",
+                    "personal_identification_number": "99",
+                    "address": "Street 24, City"
+                }
+            }, (requestSuccess) => {
+                // createRecord - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // createRecord - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getLayoutMetadata(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+
+        fm.login((loginSuccess) => {
+            fm.getLayoutMetadata((requestSuccess) => {
+                // getLayoutMetadata - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getLayoutMetadata - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getLayoutNames(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+
+        fm.login((loginSuccess) => {
+            fm.getLayoutNames((requestSuccess) => {
+                // getLayoutNames - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getLayoutNames - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getScriptNames(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+
+        fm.login((loginSuccess) => {
+            fm.getScriptNames((requestSuccess) => {
+                // getScriptNames - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getScriptNames - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getDatabaseNames(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.getDatabaseNames((requestSuccess) => {
+                // getDatabaseNames - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getDatabaseNames - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+    function getProductInformation(actionButton) {
+        let responseField = getResponseFieldByActionButton(actionButton);
+        openSection(actionButton);
+        let fm = createInstanceFM();
+
+        fm.login((loginSuccess) => {
+            fm.getProductInformation((requestSuccess) => {
+                // getProductInformation - SUCCESS
+                writeOutputToResponse(responseField, requestSuccess);
+            }, (requestError) => {
+                // getProductInformation - ERROR
+                writeOutputToResponse(responseField, requestError);
+            });
+        }, (loginError) => {
+            writeOutputToResponse(responseField, loginError);
+        })
+    }
+
+
+    // --------------------------- CREATE FM INSTANCE ---------------------------
+    function createInstanceFM() {
+        let hostInput = document.getElementById('host');
+        let layoutInput = document.getElementById('layout');
+        let databaseInput = document.getElementById('database');
+        let userInput = document.getElementById('user');
+        let passwordInput = document.getElementById('password');
+        return new fmRESTorJS(hostInput.value, databaseInput.value, layoutInput.value, userInput.value, passwordInput.value);
+    }
+
+    // --------------------------- MINOR FUNCTION ---------------------------
+    function getResponseFieldByActionButton(actionButton) {
+        return actionButton.parentElement.parentElement.querySelector(".responseText")
+    }
+
+    function isObject(value) {
+        return value && typeof value === 'object' && value.constructor === Object;
+    }
+
+    function writeOutputToResponse(responseField, response) {
+        if (isObject(response)) {
+            responseField.innerHTML = "<pre><code class='json'>" + JSON.stringify(response, null, 2);
+            +"</code></pre>";
+        } else {
+            responseField.innerHTML = "<pre><code class='json'>" + response;
+            +"</code></pre>";
+        }
+
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    }
+
+    function openSection(button) {
+        let inputResponseCode = button.parentElement.parentElement.querySelector(".inputResponseCode");
+        let imgArrow = button.parentElement.parentElement.querySelector(".arrow img");
+        imgArrow.classList.add("up");
+        inputResponseCode.style.display = "block";
+    }
+
+    function headlineClick(row) {
+        let inputResponseCode = row.parentElement.parentElement.querySelector(".inputResponseCode");
+        let imgArrow = row.parentElement.parentElement.querySelector(".arrow img");
+        if (inputResponseCode.style.display === "none" || inputResponseCode.style.display === "") {
+            inputResponseCode.style.display = "block";
+            imgArrow.classList.add("up");
+
+
+        } else {
+            inputResponseCode.style.display = "none";
+            imgArrow.classList.remove("up");
+        }
+        row.parentElement.parentElement.scrollIntoView();
+
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
+
+</script>
+</body>
+</html>

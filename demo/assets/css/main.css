@@ -1,0 +1,377 @@
+/* -------- Generic -------- */
+html {
+    font-size: 13px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    font-family: sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    overflow: auto;
+}
+
+header .logo {
+    float: left;
+
+}
+header .logo img {
+    height: 65px;
+}
+header h1 {
+    float: left;
+    margin-left: 40px;
+}
+
+h2 {
+    margin-top: 40px;
+    padding: 10px 0;
+    border-top: 1px solid #e6e6e6;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: #484848;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 1.4;
+}
+
+a {
+    color: #209dfa;
+    text-decoration: none;
+}
+
+table.methodExamplesbutton {
+    box-shadow: inset 0px -3px 7px 0px #29bbff;
+    background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    background-color: #2dabf9;
+    border-radius: 3px;
+    border: 1px solid #0085f1;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 9px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+    outline: none;
+}
+
+table.methodExamples button:hover {
+    background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+    background-color: #0688fa;
+}
+
+
+/*-------- List Methods --------*/
+.listMethods {
+    list-style-type: decimal;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.listMethods li {
+    padding: 2px 0;
+}
+
+
+/* -------- Table Method Examples -------- */
+table.methodExamples {
+    width: 100%;
+    border-spacing: 0;
+}
+
+table.methodExamples tr th {
+    background-color: #2f2f2f;
+    border: 1px solid #c7c7c7;
+    padding: 20px;
+    color: white;
+}
+
+table.methodExamples tr td {
+    border: 1px solid #c7c7c7;
+    padding: 10px;
+    max-height: 550px;
+}
+
+table.methodExamples .methodName {
+    font-weight: bold;
+}
+
+table.methodExamples .methodName, .action {
+    width: 200px;
+    text-align: center;
+}
+
+table.methodExamples pre {
+    margin: 0;
+}
+
+table.methodExamples .inputCode, table.methodExamples .response {
+    width: 700px;
+    height: 600px;
+    padding: 0;
+    overflow: scroll;
+    background-color: #F0F0F0;
+    line-height: 1.4;
+}
+
+table.methodExamples pre code {
+    max-height: 600px;
+}
+
+
+/* Access */
+table.credentials {
+
+}
+
+table.credentials tr th {
+    color: white;
+    text-align: left;
+    border-radius: 7px;
+    background: #2E7DBF;
+    overflow: hidden;
+    position: relative;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    height: 33px;
+    padding: 0 10px;
+}
+
+table.credentials tr td input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    text-align: left;
+    color: black;
+    background: #bfe2ff;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 33px;
+    padding: 0 10px;
+    outline: none;
+    width: 160px;
+    font-weight: 500;
+}
+table.credentials tr td input:hover {
+    background-color: #b8dfff;
+}
+table.credentials tr td input::placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+table.credentials tr td input:-ms-input-placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+table.credentials tr td input::-ms-input-placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+/* -------- Method Example -------- */
+
+.method {
+    overflow: auto;
+    padding: 10px 0;
+}
+
+.method .headline {
+    border-radius: 7px;
+    padding: 18px;
+    background: #2E7DBF;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 0px #cacaca;
+    position: relative;
+
+}
+
+.method .headline .arrow {
+    float: left;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px 25px;
+    background-color: #ffbf01;
+    cursor: pointer;
+}
+
+.method .headline .arrow img {
+    height: 18px;
+    transform: rotate(270deg);
+}
+
+.method .headline .arrow img.up {
+    transform: rotate(0deg);
+}
+
+.method .headline .name {
+    font-size: 16px;
+    color: white;
+    letter-spacing: 0.05em;
+    margin-left: 5em;
+}
+
+.method .headline .inputs {
+    right: 78px;
+    position: absolute;
+    height: 100%;
+    top: 0;
+
+
+}
+
+.method .headline .inputs input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 80%;
+    position: absolute;
+    right: 5px;
+    border: none;
+    top: 10%;
+    padding: 10px;
+    outline: none;
+    background-color: #bfe2ff;
+    width: 75px;
+    margin-left: 1px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+}
+
+.method .headline .inputs input:hover {
+    background-color: #b8dfff;
+}
+
+.method .headline .inputs input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.method .headline .inputs input[type="number"]::-webkit-outer-spin-button, .method .headline .inputs input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.method .headline .inputs input[type="file"] {
+    right: 86px;
+    width: 220px;
+    vertical-align: middle;
+    padding-top: 14px;
+    color: #2E7DBF;
+}
+
+.method .headline .inputs input::placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.method .headline .inputs input:-ms-input-placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.method .headline .inputs input::-ms-input-placeholder {
+    opacity: 1;
+    color: #2E7DBF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.method .headline button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 16px 25px;
+    text-decoration: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #4095dc;
+    height: 100%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.method .inputResponseCode {
+    overflow: auto;
+    margin-top: 10px;
+    display: none;
+}
+
+.method .inputResponseCode .minorHeadline {
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.method .responseCode {
+    width: 30%;
+    border-radius: 10px;
+    float: left;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.method .inputCode {
+    width: 70%;
+    border-radius: 10px;
+    float: left;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.method .inputCode .minorHeadline {
+    background: #ffbf00;
+    color: #313131;
+}
+
+.method .responseCode .minorHeadline {
+    background: #2E7DBF;
+    color: white;
+}
+
+
+.method .inputResponseCode pre {
+    margin: 0;
+    border: 1px solid #dedede;
+}
+
+.method .inputResponseCode pre code {
+    height: 600px;
+}
+
+footer {
+    margin-top: 10px;
+    color: gray;
+}

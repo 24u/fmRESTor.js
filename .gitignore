@@ -1,0 +1,12 @@
+# ENV
+.idea
+
+# TMP
+.sass-cache
+bower_components
+node_modules
+package-lock.json
+gulpfile.js
+package-lock.json
+package.json
+src
