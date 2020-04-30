@@ -1,0 +1,10 @@
+{
+  "appJs": {
+    "src": [
+      "node_modules/js-cookie/src/js.cookie.js",
+      "src/js/fmRESTorJS.js"
+    ],
+    "dest": "fmRESTorJS.js"
+  },
+  "copyAssets": []
+}
