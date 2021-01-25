@@ -1,4 +1,4 @@
-Leverage the FileMaker® 17 & 18 Data API with ease!
+Leverage the FileMaker® 17, 18 & 19 Data API with ease!
 ----
 
 fmRESTor.js is a JavaScript library developed to seamlessly interact with databases and custom apps hosted on a FileMaker Server via the new powerful FileMaker Data API from within a JavaScript code. Forget about learning FileMaker Data API in detail, just create a new object, passing it necessary parameters to connect to the database, and use our easy to understand methods to access or modify your data. fmRESTor.js will take care of authentication, exceptions, and even session preservation in order for your code to be a well-behaving client for the FileMaker Data API without you having to worry about these technical details.
@@ -25,13 +25,18 @@ Requirements
 -
 
 * Modern Web Browser
-* FileMaker Server 17 or 18
+* FileMaker Server 17, 18 or 19
 
 
-Usage:
+
+Usage ( with npm )
+-
+~~~
+npm install fmrestor
+~~~
 
 
-Usage
+Usage ( without npm )
 -
 
 
@@ -107,7 +112,7 @@ Methods
 
 ### _logout_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Close current session in the FileMaker database.
 
@@ -136,7 +141,7 @@ ___
 
 ### _getProductInformation:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Returns useful information about the FileMaker Server you're connecting to, such as version or data & time formats.
 
@@ -197,7 +202,7 @@ ___
 
 ### _getDatabaseNames:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Returns array of names of all databases hosted and enabled for access via FileMaker Data API.
 
@@ -255,7 +260,7 @@ ___
 
 ### _getScriptNames:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Returns array of names of all available scripts for given database.
 
@@ -313,7 +318,7 @@ ___
 
 ### _getLayoutNames:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Returns array of names of all available layouts for given database.
 
@@ -396,7 +401,7 @@ ___
 
 ### _getLayoutMetadata:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Returns useful information about specific layout, including fields on the layout, portals, and value list data for each field set to use a value list for data entry.
 
@@ -790,7 +795,7 @@ ___
 
 ### _createRecord:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Create a record in the primary table of the current fmRESTor instance context.
 
@@ -861,7 +866,7 @@ ___
 
 ### _deleteRecord:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Delete a record of given ID from the primary table of the current fmRESTor instance context.
 
@@ -933,7 +938,7 @@ ___
 
 ### _duplicateRecord:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Duplicate a record, specified by ID, found in the primary table of the current fmRESTor instance context.
 
@@ -1007,7 +1012,7 @@ ___
 
 ### _editRecord:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Update a record of given ID from the primary table of the current fmRESTor instance context.
 
@@ -1073,7 +1078,7 @@ ___
 
 ### _getRecord:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Get a record of given ID from the primary table of the current fmRESTor instance context.
 
@@ -1191,7 +1196,7 @@ ___
 
 ### _getRecords:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Get multiple records from the primary table of the current fmRESTor instance context. The function returns all records (default configuration for limit is 100 number of records) if called with no parameter or those fitting the criteria specified in its parameter.
 
@@ -1459,7 +1464,7 @@ ___
 
 ### _uploadFileToContainter:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Upload file and store into container field. 
     
@@ -1523,7 +1528,7 @@ ___
 
 ### _findRecord:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Returns a set of records from the primary table of the current fmRESTor instance context, fitting the find criteria specified in its parameter.
 
@@ -4962,7 +4967,7 @@ ___
 
 ### _setGlobalField:_
 
-**Supported FileMaker Server version:** 17, 18
+**Supported FileMaker Server version:** 17, 18, 19
 
 Sets the values for global fields specified in its parameter. Set global field value is available only during same login session.
 
@@ -5017,7 +5022,7 @@ ___
 
 ### _runScript:_
 
-**Supported FileMaker Server version:** 18
+**Supported FileMaker Server version:** 18, 19
 
 Simply run a script in the given database without performing any other actions.
 
