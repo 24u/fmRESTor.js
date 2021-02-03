@@ -27,7 +27,20 @@ Requirements
 * Modern Web Browser
 * FileMaker Server 17, 18 or 19
 
+Important ! - How make fmRESTor.js work with FileMaker Server 19 !
+-
 
+To access the FileMaker Data API directly from JavaScript running in a client browser you’ll need to set additional headers to support CORS (Cross Origin Request Sharing). Otherwise your requests may fail with CORS policy error:
+
+![CORS Error](images/cors_error.jpg)
+
+On macOS and Linux you can do that by modifying Apache configuration:
+
+![CORS Apache configuration](images/apache_conf.png)
+
+On Windows you can find instructions in the [IIS CORS module Configuration Reference](http://24usw.com/jpumuuzvh).
+
+You can learn more about CORS and FileMaker Data API from [this great article by Steve Winter](http://24usw.com/gxxnfcaep).
 
 Usage ( with npm )
 -
