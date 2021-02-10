@@ -1,13 +1,14 @@
 {
   "name": "@24u/fmrestor",
-  "version": "1.0.1",
+  "version": "19.0.5",
   "description": "Website www.24usoftware.com/fmrestor",
+  "homepage": "http://24usoftware.com/fmrestor",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license" : "SEE LICENSE IN README.md",
   "dependencies": {
     "js-cookie": "^2.2.1"
   },
